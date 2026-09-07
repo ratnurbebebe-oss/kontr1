@@ -4,7 +4,7 @@ import 'package:flutter_kontr_1/dog/dog_cubit.dart';
 import 'package:flutter_kontr_1/repository/repositori.dart';
 
 import 'cubit/dog_cubit.dart';
-import 'repository/dog_repository.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -35,14 +35,24 @@ class HomePage extends StatelessWidget {
         title: const Text('Dog'),
       ),
       body: Center(
-        child: BlocBuilder<DogCubit, String?>(
-          builder: (context, imageUrl) {
-            if (imageUrl == null) {
-              return const CircularProgressIndicator();
-            }
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BlocBuilder<DogCubit, String?>(
+              builder: (context, imageUrl) {
+                if (imageUrl == null) {
+                  return const CircularProgressIndicator();
+                }
 
-            return Image.network(imageUrl);
-          },
+                return Image.network(imageUrl);
+              },
+            ),ElevatedButton(
+              onPressed: () {
+                context.read<DogCubit>().getDogImage();
+              },
+              child: const Text('Get New Dog Image'),
+            ),
+          ],
         ),
       ),
     );
