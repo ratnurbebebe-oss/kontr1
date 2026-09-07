@@ -49,19 +49,10 @@ class MyApp extends StatelessWidget {
               imageUrl == null
                   ? const CircularProgressIndicator()
                   : Image.network(imageUrl!),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: getImage,
-                child: const Text("Get New Image"),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SecondPage()),
-                  );
-                },
-                child: const Text("Go to Second Page"),
+                child: const Text("привет"),
               ),
             ],
           ),
@@ -69,18 +60,4 @@ class MyApp extends StatelessWidget {
       );
     }
   }
-  class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Second Page"),
-      ),
-      body: Center(
-        child: Text("This is the second page."),
-      ),
-    );
-  }
-}
+  
