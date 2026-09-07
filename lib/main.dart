@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: getImage,
-                child: const Text("привет"),
+                child: const Text("Следующая картинка"),
               ),
             ],
           ),
